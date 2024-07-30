@@ -1,5 +1,5 @@
 // Serverless mode
-const demoMode = true;
+const demoMode = false;
 
 let last30Days;
 let dates = []
@@ -35,7 +35,7 @@ for (let day=33; day>1; day--) {
 }
 
 // Main
-for (let i=0; i<32; i++) {
+for (let i=0; i<1000; i++) {
   let itemData = {}
 
   itemData.id = i;

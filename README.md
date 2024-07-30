@@ -24,6 +24,19 @@ Full-stack DRRM (Django, React, Redux, MySQL) application to handle accounting a
 * [Python3](https://reactjs.org/) - Programming Language
 
 
+ Tell Node to use the legacy OpenSSL provider
+
+On Unix-like (Linux, macOS, Git bash, etc.):
+
+export NODE_OPTIONS=--openssl-legacy-provider
+On Windows command prompt:
+
+set NODE_OPTIONS=--openssl-legacy-provider
+On PowerShell:
+
+$env:NODE_OPTIONS = "--openssl-legacy-provider"
+When Node 18 had just become the active LTS options 1 and 2 weren't really available, but for anyone still finding this answer, 3 and 4 should no longer be considered serious options in any way.
+
 ### Installing
 
 #### Frontend
@@ -43,6 +56,7 @@ npm install
 3. Start the server
 
 ```
+$env:NODE_OPTIONS = "--openssl-legacy-provider" 
 npm run start
 ```
 
@@ -55,6 +69,14 @@ npm run start
 ```
 pip install -r requirements.txt
 ```
+
+7. Initialize server
+
+python manage.py migrate 
+
+
+python manage.py createsuperuser
+http://127.0.0.1:8000/admin/login/?next=/admin/
 
 7. Start the server
 
